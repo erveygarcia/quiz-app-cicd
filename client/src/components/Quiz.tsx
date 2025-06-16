@@ -2,7 +2,8 @@ import { useState, } from 'react';
 import type { Question } from '../models/Question.js';
 import { getQuestions } from '../services/questionApi.js';
 
-console.log("Hello Test")
+console.log("Hello Test");
+console.log("Probando CI con Cypress");
 const Quiz = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
