@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Cypress Component Tests
         working-directory: client
-        run: npx cypress run --component --config-file cypress.config.js
+        run: npx cypress run --component --config-file cypress.config.cjs
 
 
       - name: Upload Cypress screenshots (on failure)
