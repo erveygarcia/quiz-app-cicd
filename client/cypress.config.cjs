@@ -1,6 +1,4 @@
-const { defineConfig } = require('cypress');
-
-module.exports = defineConfig({
+module.exports = {
   component: {
     devServer: {
       framework: 'react',
@@ -8,4 +6,4 @@ module.exports = defineConfig({
     },
     specPattern: 'cypress/component/**/*.cy.{js,jsx,ts,tsx}',
   },
-});
+};
