@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Deploy Hook
-        run: curl ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: curl ${{ secrets.https://api.render.com/deploy/srv-d1878vp5pdvs73bv03j0?key=fYs3vIIhIcw}}

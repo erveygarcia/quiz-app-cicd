@@ -5,8 +5,13 @@ export default async (modelName: "Question", collectionName: string) => {
   try {
     const model = models[modelName];
 
+<<<<<<< HEAD
+    if (!model || !model.db || !model.db.db) {
+      throw new Error(`Missing db connection in model "${modelName}"`);
+=======
     if (!model?.db?.db) {
       throw new Error(`Model ${modelName} does not have a valid db connection`);
+>>>>>>> develop
     }
 
     const collections = await model.db.db.listCollections({
@@ -19,4 +24,4 @@ export default async (modelName: "Question", collectionName: string) => {
   } catch (err) {
     throw err;
   }
-}
+};
