@@ -9,7 +9,7 @@ describe('Quiz Component', () => {
         url: '/api/questions/random'
       },
       {
-        fixture: 'questions.json',
+        fixture: 'questions', // ✅ sin ".json"
         statusCode: 200
       }
     ).as('getRandomQuestion');
@@ -26,24 +26,26 @@ describe('Quiz Component', () => {
     cy.mount(<Quiz />);
     cy.get('button').contains('Start Quiz').click();
 
-    // Answer questions
+    // Answer a question (click option 1)
     cy.get('button').contains('1').click();
 
-    // Verify the quiz completion
-    cy.get('.alert-success').should('be.visible').and('contain', 'Your score');
+    // Verify completion message
+    cy.get('.alert-success')
+      .should('be.visible')
+      .and('contain', 'Your score');
   });
 
   it('should restart the quiz after completion', () => {
     cy.mount(<Quiz />);
     cy.get('button').contains('Start Quiz').click();
 
-    // Answer questions
+    // Answer a question (click option 1)
     cy.get('button').contains('1').click();
 
-    // Restart the quiz
+    // Click on restart button
     cy.get('button').contains('Take New Quiz').click();
 
-    // Verify the quiz is restarted
+    // Verify quiz restarted
     cy.get('.card').should('be.visible');
     cy.get('h2').should('not.be.empty');
   });
