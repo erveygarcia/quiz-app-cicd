@@ -22,14 +22,12 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: |
-          cd client
-          npm ci
+        working-directory: client
+        run: npm ci
 
       - name: Run Cypress Component Tests
-        run: |
-          cd client
-          npx cypress run --component --config-file cypress.config.ts
+        working-directory: client
+        run: npx cypress run --component
 
       - name: Upload Cypress screenshots (on failure)
         if: failure()
