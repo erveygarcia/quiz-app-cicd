@@ -3,6 +3,9 @@ import express from 'express';
 import db from './config/connection.js';
 import routes from './routes/index.js';
 
+console.log("🚀 Despliegue automático activo");
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
