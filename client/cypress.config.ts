@@ -1,4 +1,5 @@
-import { defineConfig } from 'cypress';
+import { defineConfig } from 'cypress'
+import vitePreprocessor from 'cypress-vite'
 
 export default defineConfig({
   component: {
@@ -9,6 +10,8 @@ export default defineConfig({
         configFile: 'vite.config.ts',
       },
     },
-    specPattern: 'cypress/component/**/*.{cy.js,cy.jsx,cy.ts,cy.tsx}',
+    specPattern: 'cypress/component/**/*.cy.{js,jsx,ts,tsx}',
+    supportFile: 'cypress/support/component.ts'
   },
-});
+  e2e: {},
+})
